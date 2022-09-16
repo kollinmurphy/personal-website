@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import AnimatedText from "../components/AnimatedText";
+import AnimatedHeader from "../components/AnimatedHeader";
+---
+
+<Layout title="Software Development by Kollin Murphy">
+  <main class="relative">
+    <div class="animated">
+      <AnimatedText client:load class="delay-100">Web.</AnimatedText>
+      <AnimatedText client:load class="delay-500">Mobile.</AnimatedText>
+      <AnimatedText client:load class="delay-[900ms]">Full-stack.</AnimatedText>
+      <AnimatedText client:load class="delay-[1300ms] text-3xl">Software solutions for your needs.</AnimatedText>
+    </div>
+
+    <AnimatedHeader client:load class='delay-[1700ms]' />
+
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="/about"
+        title="About Me"
+        body="Find out who I am, what I do, and how I can help you."
+      />
+      <Card
+        href="https://astro.build/integrations/"
+        title="Other stuff"
+        body="It is TBD"
+      />
+      <Card
+        href="https://github.com/kollinmurphy"
+        title="GitHub"
+        body="Check out my past projects."
+      />
+      <Card
+        href="mailto:kollin.murphy@gmail.com"
+        title="Reach out"
+        body="Shoot me an email and I'll get back ASAP."
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style is:global>
+
+  div:hover h1 {
+    right: 100%;
+  }
+
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 60ch;
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--awesome-gradient);
+    animation: pulse 3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
