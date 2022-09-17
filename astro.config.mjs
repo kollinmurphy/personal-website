@@ -5,5 +5,12 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs(), tailwind()]
+  integrations: [solidJs(), tailwind()],
+  vite: {
+    ssr: {
+      noExternal: [
+        'node_modules/astro-spa/Spa.astro',
+      ],
+    }
+  }
 });

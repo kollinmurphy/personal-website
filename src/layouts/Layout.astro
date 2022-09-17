@@ -1,9 +1,13 @@
 ---
+import { Spa } from "astro-spa";
+
 export interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
+
 ---
 
 <!DOCTYPE html>
@@ -13,14 +17,24 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" type="text/css" href="/styles.css" />
 		<title>{title}</title>
 	</head>
 	<body class='overflow-x-hidden'>
-		<slot />
+		<div id='swup' class='swup-transition-fade'>
+			<main>
+				<slot />
+				<Spa
+					progressBar={false}
+				/>
+			</main>
+		</div>
 	</body>
 </html>
 
 <style is:global>
+
+
 	:root {
 		--awesome-gradient: linear-gradient(0deg, #0210a3, #8ba1da);
 	}
@@ -45,6 +59,82 @@ const { title } = Astro.props;
 		}
 	}
 
+  div:hover h1 {
+    right: 100%;
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--awesome-gradient);
+    animation: pulse 3s ease-in-out infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+	:root {
+		--link-gradient: linear-gradient(45deg, #0210a3, #8ba1da 30%, var(--color-border) 60%);
+	}
+
+	.link-card {
+		list-style: none;
+		display: flex;
+		padding: 0.15rem;
+		background-image: var(--link-gradient);
+		background-size: 400%;
+		border-radius: 0.5rem;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+		
+	}
+
+	.link-card > a {
+		width: 100%;
+		text-decoration: none;
+		line-height: 1.4;
+		padding: 1em 1.3em;
+		border-radius: 0.35rem;
+		color: var(--text-color);
+		background-color: white;
+		opacity: 0.8;
+	}
+
+	h2 {
+		margin: 0;
+		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	p {
+		margin-top: 0.75rem;
+		margin-bottom: 0;
+	}
+
+	h2 span {
+		display: inline-block;
+		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.link-card:is(:hover, :focus-within) {
+		background-position: 0;
+	}
+
+	.link-card:is(:hover, :focus-within) h2 {
+		color: #4f39fa;
+	}
+
+	.link-card:is(:hover, :focus-within) h2 span {
+		will-change: transform;
+		transform: translateX(2px);
+	}
 </style>
 
 <style>
@@ -56,8 +146,14 @@ const { title } = Astro.props;
 		--color-text: hsl(12, 5%, 4%);
 		--color-bg: hsl(10, 21%, 95%);
 		--color-border: hsl(17, 24%, 90%);
-		
 	}
+
+  main {
+    margin: auto;
+    padding: 1em;
+    max-width: 60ch;
+  }
+
 
 	html {
 		font-family: system-ui, sans-serif;

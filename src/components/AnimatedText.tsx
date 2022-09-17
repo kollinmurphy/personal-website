@@ -1,6 +1,6 @@
 /* @jsxImportSource solid-js */
 
-import { createEffect, createSignal, JSXElement } from "solid-js"
+import { createEffect, createSignal, JSXElement, onMount } from "solid-js"
 
 interface AnimatedTextProps {
   children: JSXElement;
@@ -12,6 +12,7 @@ const AnimatedText = (props: AnimatedTextProps) => {
 
   let ref: HTMLDivElement | undefined
   createEffect(() => {
+    console.log("MOUNT")
     if (!ref) return
     const observer = new IntersectionObserver((entries) => {
       const [h1] = entries

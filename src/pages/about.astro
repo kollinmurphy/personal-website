@@ -1,8 +1,13 @@
 ---
+import Home from "../components/Home.astro";
 import Layout from "../layouts/Layout.astro";
 
 ---
 
 <Layout title='About Me'>
-  Test
+  <main>
+    <a class='py-4' href='/'>
+      <Home fill='black' width={64} height={64} />
+    </a>
+  </main>
 </Layout>
