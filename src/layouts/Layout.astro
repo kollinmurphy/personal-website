@@ -1,4 +1,5 @@
 ---
+// @ts-ignore
 import { Spa } from "astro-spa";
 
 export interface Props {
@@ -7,27 +8,29 @@ export interface Props {
 
 const { title } = Astro.props;
 
-
+const year = new Date().getFullYear()
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class='bg-gray-50'>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" type="text/css" href="/styles.css" />
 		<title>{title}</title>
 	</head>
-	<body class='overflow-x-hidden'>
+	<body class='overflow-x-hidden relative min-h-screen'>
 		<div id='swup' class='swup-transition-fade'>
-			<main>
+			<main class='relative'>
 				<slot />
 				<Spa
 					progressBar={false}
 				/>
 			</main>
+		</div>
+		<div class='absolute bottom-4 left-4 text-gray-400'>
+			&copy; {year} by Kollin Murphy
 		</div>
 	</body>
 </html>
@@ -37,6 +40,7 @@ const { title } = Astro.props;
 
 	:root {
 		--awesome-gradient: linear-gradient(0deg, #0210a3, #8ba1da);
+		--message-color: #0B93F6;
 	}
 
 	@keyframes pulse {
@@ -74,67 +78,40 @@ const { title } = Astro.props;
     border-radius: 0.4rem;
   }
 
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
 	:root {
 		--link-gradient: linear-gradient(45deg, #0210a3, #8ba1da 30%, var(--color-border) 60%);
 	}
 
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 0.15rem;
-		background-image: var(--link-gradient);
-		background-size: 400%;
-		border-radius: 0.5rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 
-		
+	.message-bubble::before {
+		content: "";
+		position: absolute;
+
+		z-index: 1;
+		bottom: 0;
+		right: -6px;
+		width: 20px;
+		height: 32px;
+		background: var(--message-color);
+		border-bottom-left-radius: 14px;
 	}
 
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1em 1.3em;
-		border-radius: 0.35rem;
-		color: var(--text-color);
-		background-color: white;
-		opacity: 0.8;
+	.message-bubble::after {
+		content: "";
+		position: absolute;
+
+		z-index: 1;
+		bottom: -2px;
+		right: -20px;
+		width: 20px;
+		height: 40px;
+		background: rgb(249, 250, 251);
+		/* background: black; */
+		border-bottom-left-radius: 12px;
 	}
 
-	h2 {
-		margin: 0;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
 
-	p {
-		margin-top: 0.75rem;
-		margin-bottom: 0;
-	}
 
-	h2 span {
-		display: inline-block;
-		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-	}
-
-	.link-card:is(:hover, :focus-within) h2 {
-		color: #4f39fa;
-	}
-
-	.link-card:is(:hover, :focus-within) h2 span {
-		will-change: transform;
-		transform: translateX(2px);
-	}
 </style>
 
 <style>
@@ -144,8 +121,7 @@ const { title } = Astro.props;
 		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
 
 		--color-text: hsl(12, 5%, 4%);
-		--color-bg: hsl(10, 21%, 95%);
-		--color-border: hsl(17, 24%, 90%);
+		--color-border: #b2cdde;
 	}
 
   main {
@@ -159,7 +135,6 @@ const { title } = Astro.props;
 		font-family: system-ui, sans-serif;
 		font-size: var(--font-size-base);
 		color: var(--color-text);
-		background-color: var(--color-bg);
 	}
 
 	body {

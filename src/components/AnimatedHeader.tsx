@@ -23,7 +23,7 @@ const AnimatedHeader = (props: AnimatedHeaderProps) => {
   })
 
   return (
-    <div class='animated-text' ref={ref}>
+    <div ref={ref}>
       <h1 class={`text-7xl text-gradient my-6 pb-1 transition-all duration-1000 bg-clip-text text-transparent ${props.class}`} classList={{
         "opacity-0": !visible(),
         "blur-[8px]": !visible(),

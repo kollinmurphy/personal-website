@@ -6,10 +6,10 @@ import AnimatedHeader from "../components/AnimatedHeader";
 ---
 
 <Layout title="Software Development by Kollin Murphy">
-  <div class="animated">
-    <AnimatedText client:load class="delay-100">Web.</AnimatedText>
-    <AnimatedText client:load class="delay-500">Mobile.</AnimatedText>
-    <AnimatedText client:load class="delay-[900ms]">Full-stack.</AnimatedText>
+  <div class="animated mt-10 mb-4">
+    <AnimatedText client:load class="text-6xl delay-100">Web.</AnimatedText>
+    <AnimatedText client:load class="text-6xl delay-500">Mobile.</AnimatedText>
+    <AnimatedText client:load class="text-6xl delay-[900ms]">Full-stack.</AnimatedText>
     <AnimatedText client:load class="delay-[1300ms] text-3xl"
       >Software solutions for your needs.</AnimatedText
     >
@@ -17,21 +17,16 @@ import AnimatedHeader from "../components/AnimatedHeader";
 
   <AnimatedHeader client:load class="delay-[1700ms]" />
 
-  <ul role="list" class="link-card-grid">
+  <ul role="list" class="link-card-grid mt-6">
     <Card
       href="/about"
-      title="About Me"
+      title="About me"
       body="Find out who I am, what I do, and how I can help you."
-    />
-    <Card
-      href="https://astro.build/integrations/"
-      title="Other stuff"
-      body="It is TBD"
     />
     <Card
       href="https://github.com/kollinmurphy"
       title="GitHub"
-      body="Check out my past projects."
+      body="Check out some of my past projects."
     />
     <Card
       href="mailto:kollin.murphy@gmail.com"
@@ -40,3 +35,12 @@ import AnimatedHeader from "../components/AnimatedHeader";
     />
   </ul>
 </Layout>
+
+<style>
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

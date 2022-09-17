@@ -1,13 +1,27 @@
 ---
-import Home from "../components/Home.astro";
+import Home from "../components/HomeIcon.astro";
+import ChatConversation from "../components/ChatConversation";
 import Layout from "../layouts/Layout.astro";
-
 ---
 
-<Layout title='About Me'>
+<Layout title="About Me">
   <main>
-    <a class='py-4' href='/'>
-      <Home fill='black' width={64} height={64} />
+    <a href="/">
+      <div class="mt-6 mb-4 btn btn-ghost btn-circle">
+        <Home fill="black" width={32} height={32} />
+      </div>
     </a>
+
+    <div class="flex flex-col">
+      <h1 class="text-6xl my-6 z-40">About Me</h1>
+      <img
+        src="/profile.jpg"
+        class="h-[512px] relative top-[-128px] object-contain rounded-lg self-end shadow-lg"
+      />
+
+      <div class="relative top-[-128px] mt-6">
+        <ChatConversation client:load />
+      </div>
+    </div>
   </main>
 </Layout>

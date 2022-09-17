@@ -12,7 +12,6 @@ const AnimatedText = (props: AnimatedTextProps) => {
 
   let ref: HTMLDivElement | undefined
   createEffect(() => {
-    console.log("MOUNT")
     if (!ref) return
     const observer = new IntersectionObserver((entries) => {
       const [h1] = entries
@@ -25,8 +24,8 @@ const AnimatedText = (props: AnimatedTextProps) => {
   })
 
   return (
-    <div class='animated-text transition-all duration-500' ref={ref}>
-      <h3 class={`text-6xl my-3 transition-all duration-500 ${props.class}`} classList={{
+    <div class='transition-all duration-500' ref={ref}>
+      <h3 class={`my-3 transition-all duration-500 ${props.class}`} classList={{
         "translate-x-[100vw]": !visible(),
         "blur-[2px]": !visible(),
       }}>
