@@ -1,0 +1,73 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+	newTab?: boolean;
+	options: Array<{ label: string; href: string }>;
+}
+
+const { title, body, newTab, options } = Astro.props;
+---
+
+<li class="link-card list-none flex p-1 dropdown dropdown-end w-full">
+	<label tabindex='0' class='bg-white w-full p-5'>
+		<h2 class='text-black'>
+			{title}
+			<span>&rarr;</span>
+		</h2>
+		<p class='mb-0 mt-1 text-black'>
+			{body}
+		</p>
+	</label>
+	<ul tabindex='0' class='dropdown-content menu p-2 mr-2 shadow-lg shadow-[#999] bg-white text-black rounded-box w-52'>
+		{options.map(o => (
+			<li><a href={o.href} target={newTab ? '_blank' : undefined}>{o.label}</a></li>
+		))}
+	</ul>
+</li>
+<style>
+
+	h2 span {
+		display: inline-block;
+		transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	.link-card:is(:hover, :focus-within) {
+		background-position: 0;
+	}
+
+	.link-card:is(:hover, :focus-within) h2 {
+		color: #102fcc;
+	}
+
+	.link-card:is(:hover, :focus-within) h2 span {
+		will-change: transform;
+		transform: translateX(4px);
+	}
+
+:root {
+	--link-gradient: linear-gradient(45deg, #022aa3, #8ba1da 30%, #e4eaee 60%);
+}
+
+.link-card {
+	background-image: var(--link-gradient);
+	background-size: 400%;
+	border-radius: 0.5rem;
+	background-position: 100%;
+	transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-card > a {
+	width: 100%;
+	text-decoration: none;
+	line-height: 1.4;
+	padding: 1em 1.3em;
+	border-radius: 0.35rem;
+	color: var(--text-color);
+}
+
+h2 {
+	margin: 0;
+	transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+</style>

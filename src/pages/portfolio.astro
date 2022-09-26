@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Home from "../components/HomeIcon.astro";
+import CardWithOptions from "../components/CardWithOptions.astro";
 ---
 
 <Layout title="Software Development by Kollin Murphy">
@@ -11,28 +12,25 @@ import Home from "../components/HomeIcon.astro";
     </div>
   </a>
 
+  <h2 class='text-black text-6xl mb-3'>Portfolio</h2>
+
   <div class="flex flex-col gap-3">
-    <Card
-      href="https://apps.apple.com/us/app/fantastic-sudoku-variants/id1573679460"
-      title="Fantastic Sudoku (iOS)"
+    <CardWithOptions
+      options={[
+        { label: 'iOS', href: 'https://apps.apple.com/us/app/fantastic-sudoku-variants/id1573679460' },
+        { label: 'Android', href: 'https://play.google.com/store/apps/details?id=com.canlin.fantastic_sudoku_free' },
+      ]}
+      title="Fantastic Sudoku"
       body="A fun game with variations on classic Sudoku with near-limitless combinations of boards."
       newTab={true}
     />
-    <Card
-      href="https://play.google.com/store/apps/details?id=com.canlin.fantastic_sudoku_free"
-      title="Fantastic Sudoku (Android)"
-      body="A fun game with variations on classic Sudoku with near-limitless combinations of boards."
-      newTab={true}
-    />
-    <Card
-      href="https://apps.apple.com/us/app/blujay-events/id1589629576"
-      title="BluJay Events (iOS)"
-      body="A social app to help people find local events in Cache Valley, Utah."
-      newTab={true}
-    />
-    <Card
-      href="https://play.google.com/store/apps/details?id=com.canlin.blujay"
-      title="BluJay Events (Android)"
+    <CardWithOptions
+      options={[
+        { label: 'iOS', href: 'https://apps.apple.com/us/app/blujay-events/id1589629576' },
+        { label: 'Android', href: 'https://play.google.com/store/apps/details?id=com.canlin.blujay' },
+        { label: 'Web', href: 'https://blujayevents.com' },
+      ]}
+      title="BluJay Events"
       body="A social app to help people find local events in Cache Valley, Utah."
       newTab={true}
     />
