@@ -1,0 +1,21 @@
+@font-face { font-family:bolonewt;src: url('bolonewt.ttf'); }
+
+body {
+    margin:0px;
+    overflow:hidden;
+}
+
+#lblLevelPhone {
+    position:absolute;
+    width:256px;
+    left:50%;
+    margin-left:-128px;
+    top:50%;
+    margin-top:64px;
+}
+
+canvas {
+    position:absolute;
+    left:0px;
+    top:0px;
+}

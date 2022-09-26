@@ -1,0 +1,64 @@
+@font-face { font-family:bolonewt;src: url('bolonewt.ttf'); }
+@font-face { font-family:Crom;src: url('crom-min.ttf'); }
+
+html,
+body {
+    font-family:bolonewt;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
+    padding: 0;
+    background-color:#272727;
+    color:white;
+    text-align:center;
+}
+.page {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+.contents {
+    position:absolute;
+    top:45%;
+    width:100%;
+
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+#content-text {
+    font-weight: bold;
+    font-size: 5em;
+}
+#title {
+    position:relative;
+}
+.btn {
+    width:100px;
+    margin-top:12px;
+    border:2px solid white;
+    border-radius:50px;
+    background-color:#1d1d1d;
+}
+.btn:active {
+    border:2px solid #cacaca;
+    background-color:#252525;
+}
+#attr {
+    padding-top:25px;
+}
+#canvasTitle {
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+#imgTitle {
+    display:block;
+    width:320px;
+    position:absolute;
+    top:25%;
+    left:50%;
+    margin-left:-160px;
+}

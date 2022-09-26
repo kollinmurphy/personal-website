@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/MazingRace" version="1.0.0" height="360" width="360" viewmodes="maximized">
+    <tizen:application id="g0C00dgdRw.MazingRace" package="g0C00dgdRw" required_version="2.3"/>
+    <author email="luckymurphydevelopment@gmail.com">Kollin Murphy</author>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <feature name="http://tizen.org/feature/sensor.gravity"/>
+    <icon src="logoNew.png"/>
+    <name>Mazing Race</name>
+    <tizen:privilege name="http://tizen.org/privilege/power"/>
+    <tizen:profile name="wearable"/>
+</widget>
