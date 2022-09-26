@@ -1,7 +1,4 @@
 ---
-// @ts-ignore
-import { Spa } from "astro-spa";
-
 export interface Props {
 	title: string;
 }
@@ -20,13 +17,10 @@ const year = new Date().getFullYear()
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class='overflow-x-hidden relative min-h-screen'>
-		<div id='swup' class='swup-transition-fade'>
+	<body class='w-full overflow-x-hidden relative min-h-screen flex flex-col items-center'>
+		<div id='swup' class='swup-transition-fade mb-12'>
 			<main class='relative'>
 				<slot />
-				<Spa
-					progressBar={false}
-				/>
 			</main>
 		</div>
 		<div class='absolute bottom-4 left-4 text-gray-400'>

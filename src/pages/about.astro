@@ -13,13 +13,13 @@ import Layout from "../layouts/Layout.astro";
     </a>
 
     <div class="flex flex-col">
-      <h1 class="text-6xl my-6 z-40">About Me</h1>
+      <h1 class="text-6xl my-6 z-40 text-black">About Me</h1>
       <img
         src="/profile.jpg"
-        class="h-[512px] relative top-[-128px] object-contain rounded-lg self-end shadow-lg"
+        class="h-[512px] relative lg:top-[-128px] object-contain rounded-lg self-end shadow-lg"
       />
 
-      <div class="relative top-[-128px] mt-6">
+      <div class="relative lg:top-[-128px] mt-6 w-full overflow-x-hidden">
         <ChatConversation client:load />
       </div>
     </div>

@@ -24,8 +24,8 @@ const AnimatedText = (props: AnimatedTextProps) => {
   })
 
   return (
-    <div class='transition-all duration-500' ref={ref}>
-      <h3 class={`my-3 transition-all duration-500 ${props.class}`} classList={{
+    <div class='transition-all duration-500 w-full overflow-x-hidden' ref={ref}>
+      <h3 class={`text-black my-1 lg:my-3 transition-transform transition-blur transition-blur duration-500 ${props.class}`} classList={{
         "translate-x-[100vw]": !visible(),
         "blur-[2px]": !visible(),
       }}>
