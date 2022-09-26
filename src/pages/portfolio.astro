@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Home from "../components/HomeIcon.astro";
+---
+
+<Layout title="Software Development by Kollin Murphy">
+  <a href="/">
+    <div class="mt-6 mb-4 btn btn-ghost btn-circle">
+      <Home fill="black" width={32} height={32} />
+    </div>
+  </a>
+
+  <div class="flex flex-col gap-3">
+    <Card
+      href="https://apps.apple.com/us/app/fantastic-sudoku-variants/id1573679460"
+      title="Fantastic Sudoku (iOS)"
+      body="A fun game with variations on classic Sudoku with near-limitless combinations of boards."
+      newTab={true}
+    />
+    <Card
+      href="https://play.google.com/store/apps/details?id=com.canlin.fantastic_sudoku_free"
+      title="Fantastic Sudoku (Android)"
+      body="A fun game with variations on classic Sudoku with near-limitless combinations of boards."
+      newTab={true}
+    />
+    <Card
+      href="https://apps.apple.com/us/app/blujay-events/id1589629576"
+      title="BluJay Events (iOS)"
+      body="A social app to help people find local events in Cache Valley, Utah."
+      newTab={true}
+    />
+    <Card
+      href="https://play.google.com/store/apps/details?id=com.canlin.blujay"
+      title="BluJay Events (Android)"
+      body="A social app to help people find local events in Cache Valley, Utah."
+      newTab={true}
+    />
+  </div>
+</Layout>
+
+<style>
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
