@@ -10,7 +10,7 @@ const { title, body, newTab, options } = Astro.props;
 ---
 
 <li class="link-card list-none flex p-1 dropdown dropdown-end w-full">
-	<label tabindex='0' class='bg-white w-full p-5'>
+	<label tabindex='0' class='bg-white w-full p-5  cursor-pointer'>
 		<h2 class='text-black'>
 			{title}
 			<span>&rarr;</span>
@@ -54,6 +54,7 @@ const { title, body, newTab, options } = Astro.props;
 	background-size: 400%;
 	border-radius: 0.5rem;
 	background-position: 100%;
+	background-repeat: no-repeat;
 	transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
