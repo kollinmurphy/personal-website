@@ -12,13 +12,34 @@ import CardWithOptions from "../components/CardWithOptions.astro";
     </div>
   </a>
 
-  <h2 class='text-black text-6xl mb-3'>Portfolio</h2>
+  <h2 class="text-black text-6xl mb-3">Portfolio</h2>
 
   <div class="flex flex-col gap-3">
     <CardWithOptions
       options={[
-        { label: 'iOS', href: 'https://apps.apple.com/us/app/fantastic-sudoku-variants/id1573679460' },
-        { label: 'Android', href: 'https://play.google.com/store/apps/details?id=com.canlin.fantastic_sudoku_free' },
+        {
+          label: "iOS",
+          href: "https://apps.apple.com/us/app/sudoku-compete/id6443859021",
+        },
+        {
+          label: "Android",
+          href: "https://play.google.com/store/apps/details?id=com.kollinmurphy.sudokucompete",
+        },
+      ]}
+      title="Sudoku Compete"
+      body="A competitive game in which two players battle in realtime to complete a Sudoku puzzle."
+      newTab={true}
+    />
+    <CardWithOptions
+      options={[
+        {
+          label: "iOS",
+          href: "https://apps.apple.com/us/app/fantastic-sudoku-variants/id1573679460",
+        },
+        {
+          label: "Android",
+          href: "https://play.google.com/store/apps/details?id=com.canlin.fantastic_sudoku_free",
+        },
       ]}
       title="Fantastic Sudoku"
       body="A fun game with variations on classic Sudoku with near-limitless combinations of boards."
@@ -26,30 +47,36 @@ import CardWithOptions from "../components/CardWithOptions.astro";
     />
     <CardWithOptions
       options={[
-        { label: 'iOS', href: 'https://apps.apple.com/us/app/blujay-events/id1589629576' },
-        { label: 'Android', href: 'https://play.google.com/store/apps/details?id=com.canlin.blujay' },
-        { label: 'Web', href: 'https://blujayevents.com' },
+        {
+          label: "iOS",
+          href: "https://apps.apple.com/us/app/blujay-events/id1589629576",
+        },
+        {
+          label: "Android",
+          href: "https://play.google.com/store/apps/details?id=com.canlin.blujay",
+        },
+        { label: "Web", href: "https://blujayevents.com" },
       ]}
       title="BluJay Events"
       body="A social app to help people find local events in Cache Valley, Utah."
       newTab={true}
     />
     <Card
-      title='Three Body Problem Simulation'
-      body='A web-based simulation of three orbiting masses in a vacuum.'
-      href='/three_body_problem/index.html'
+      title="Three Body Problem Simulation"
+      body="A web-based simulation of three orbiting masses in a vacuum."
+      href="/three_body_problem/index.html"
       newTab={true}
     />
     <Card
-      title='Mazing Race'
-      body='A dynamically-generated online maze game controlled by clicking and dragging the mouse.'
-      href='/maze/index.html'
+      title="Mazing Race"
+      body="A dynamically-generated online maze game controlled by clicking and dragging the mouse."
+      href="/maze/index.html"
       newTab={true}
     />
     <Card
-      title='Bella Aesthetics'
-      body='A simple website for promoting beauty services. (Work in progress)'
-      href='https://bellamedicalgroup.com'
+      title="Bella Aesthetics"
+      body="A simple website for promoting beauty services. (Work in progress)"
+      href="https://bellamedicalgroup.com"
       newTab={true}
     />
   </div>
