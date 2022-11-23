@@ -1,0 +1,18 @@
+---
+import HomeIcon from "../components/HomeIcon.astro";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout title='Not found'>
+  <a href="/">
+    <div class="mt-6 mb-4 btn btn-ghost btn-circle">
+      <HomeIcon fill="black" width={32} height={32} />
+    </div>
+  </a>
+  <div class='flex flex-col w-full items-center'>
+    <img src='/404.png' class='w-[50%]' alt='Not found' />
+    <h2 class='text-3xl font-bold mt-4'>A dog ate this page.</h2>
+    <p class='text-lg mt-2'>We're sorry, but the page you were looking for doesn't exist.</p>
+  </div>
+</Layout>
