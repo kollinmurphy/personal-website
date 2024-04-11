@@ -1,0 +1,52 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// const ANDROID_LINK =
+//   "https://play.google.com/store/apps/details?id=com.kollinmurphy.sudokucompete";
+// const IOS_LINK = "https://apps.apple.com/us/app/sudoku-compete/id6443859021";
+---
+
+<Layout title="Bananadicta">
+  <img
+    src="/assets/bananadicta.png"
+    class="aspect-square mb-6 mt-8 h-32 mx-auto rounded-lg"
+    alt="Logo"
+  />
+  <h1 class="mb-2 text-center md:text-left">Bananadicta 🍌</h1>
+  <p class="text-center md:text-left">
+    The a-peeling dictionary app that's bananas about words!
+  </p>
+
+  <!-- <div
+    class="flex flex-col md:flex-row gap-2 items-center md:h-16 my-8 md:mb-[64px]"
+  >
+    <a href={ANDROID_LINK} class="flex items-center justify-center w-full">
+      <img
+        src="/assets/google-play-badge.png"
+        class="object-contain h-16"
+        alt="Get it on Google Play"
+      />
+    </a>
+    <a href={IOS_LINK} class="flex items-center justify-center w-full">
+      <img
+        src="/assets/app-store-badge.png"
+        class="object-contain h-16"
+        alt="Download on the App Store"
+      />
+    </a>
+  </div> -->
+
+  <h3 class="text-2xl mt-4">Support</h3>
+  <p class="mb-8">
+    For support, please contact <a
+      class="hover:underline"
+      href="mailto:luckymurphydevelopment@gmail.com"
+    >
+      luckymurphydevelopment@gmail.com</a
+    >.
+  </p>
+
+  <a href="/bananadicta/privacy" class="text-md mt-4 hover:underline"
+    >Privacy Policy</a
+  >
+</Layout>
