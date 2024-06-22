@@ -40,7 +40,7 @@
   }
 })();
 const scriptRel = "modulepreload";
-const assetsURL = function(dep, importerUrl) {
+const assetsURL = function (dep, importerUrl) {
   return new URL(dep, importerUrl).href;
 };
 const seen = {};
@@ -96,10 +96,10 @@ const initializeScripts = async () => {
     __vitePreload(() => import("./index-f7bd3e0a.js").then((n) => n.i), true ? [] : void 0, import.meta.url),
     __vitePreload(() => import("./index-5f742df1.js").then((n) => n.i), true ? [] : void 0, import.meta.url),
     __vitePreload(() => import("./index-c10b9321.js"), true ? [] : void 0, import.meta.url),
-    __vitePreload(() => import("./index-0f37a71a.js"), true ? ["./index-0f37a71a.js","./scoring-e97370d4.js"] : void 0, import.meta.url),
+    __vitePreload(() => import("./index-0f37a71a.js"), true ? ["./index-0f37a71a.js", "./scoring-e97370d4.js"] : void 0, import.meta.url),
     __vitePreload(() => import("./index-242bf206.js"), true ? [] : void 0, import.meta.url),
-    __vitePreload(() => import("./index-778bd7ae.js"), true ? ["./index-778bd7ae.js","./sound-23b6522c.js","./scoring-e97370d4.js"] : void 0, import.meta.url),
-    __vitePreload(() => import("./index-85081b49.js"), true ? ["./index-85081b49.js","./sound-23b6522c.js","./scoring-e97370d4.js"] : void 0, import.meta.url)
+    __vitePreload(() => import("./index-778bd7ae.js"), true ? ["./index-778bd7ae.js", "./sound-23b6522c.js", "./scoring-e97370d4.js"] : void 0, import.meta.url),
+    __vitePreload(() => import("./index-85081b49.js"), true ? ["./index-85081b49.js", "./sound-23b6522c.js", "./scoring-e97370d4.js"] : void 0, import.meta.url)
   ]).catch((error) => {
     console.error(error);
     throw new Error("Could not load scripts");
@@ -218,7 +218,7 @@ const createStarBackground = ({
 };
 const loadAudio = (filename) => {
   const element = document.createElement("audio");
-  element.src = `./galaga/assets/audio/${filename}`;
+  element.src = `/galaga/assets/audio/${filename}`;
   element.preload = "auto";
   return new Promise((resolve, reject) => {
     element.oncanplaythrough = () => {
@@ -283,8 +283,10 @@ const initializeAudio = async () => {
   audio = api;
 };
 let audio;
-const Audio = () => audio || { play: () => Promise.resolve(false), stopAll: () => {
-} };
+const Audio = () => audio || {
+  play: () => Promise.resolve(false), stopAll: () => {
+  }
+};
 const getFromStorage = ({
   key,
   defaultValue
@@ -800,7 +802,7 @@ const loadTexture$1 = (src) => {
 };
 const initializeMenuTextures = async () => {
   const [enemy4] = await Promise.all(
-    ["4.png"].map((src) => loadTexture$1(`./galaga/assets/img/${src}`))
+    ["4.png"].map((src) => loadTexture$1(`/galaga/assets/img/${src}`))
   ).catch((error) => {
     console.error(error);
     throw new Error("Could not load textures");
@@ -1071,7 +1073,7 @@ const initializeTextures = async () => {
       "my-projectile.png",
       "ship.png",
       "their-projectile.png"
-    ].map((src) => loadTexture(`./galaga/assets/img/${src}`))
+    ].map((src) => loadTexture(`/galaga/assets/img/${src}`))
   ).catch((error) => {
     console.error(error);
     throw new Error("Could not load textures");
