@@ -1,0 +1,4 @@
+- Resell value is 80% of the original price
+- First round grants 100 money, subsequent rounds take 1 away each time
+- Start with 40 lives
+- Label "not enough money."
